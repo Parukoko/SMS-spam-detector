@@ -251,7 +251,7 @@ def preprocess_input(text):
 def predict(text):
     processed_input = preprocess_input(text)
     prediction = model.predict(processed_input)
-    return "Spam" if prediction > 0.5 else "Not Spam"
+    return True if prediction > 0.5 else False
 
 # Create a Gradio interface
 gradio_app = gr.Interface(
